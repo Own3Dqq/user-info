@@ -50,16 +50,18 @@ tableNumber(8);
 tableNumber(9);
 
 /*  */
-/* arithmetic mean  */
+/* Arithmetic Mean  */
 
-// const arithmeticAllNumber = (a, b) => {
-// 	let sum = 0;
-// 	const itter = b - a;
+const arithmeticAllNumber = (a, b) => {
+	let sum = 0;
+	let acc = 0;
 
-// 	return function () {
-// 		for (let i = a; i < b; i++) {}
-// 		return sum;
-// 	};
-// };
+	for (let i = a; i <= b; i++) {
+		sum = sum + i;
+		acc++;
+	}
 
-// arithmeticAllNumber(30, 80);
+	return sum / acc;
+};
+
+console.log(arithmeticAllNumber(1, 500));

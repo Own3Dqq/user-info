@@ -11,3 +11,9 @@
   align-items: center;
   width: 130px;
 }
+
+body {
+  background: #3e3d3d;
+  color: #fff;
+  opacity: 0.6;
+}
