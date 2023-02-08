@@ -10,8 +10,10 @@ const showNumber = (a, b) => {
 	numbersArray.className = `showNumber`;
 	App.insertAdjacentElement('afterbegin', numbersArray);
 
-	for (let i = a; i <= b; i++) {
-		numbersArray.insertAdjacentHTML('beforeend', `<span>${i}, </span>`);
+	if (!isNaN(a) && !isNaN(b) && a <= b) {
+		for (let i = a; i <= b; i++) {
+			numbersArray.insertAdjacentHTML('beforeend', `<span>${i}, </span>`);
+		}
 	}
 };
 
@@ -23,8 +25,11 @@ const squadNumber = (a, b) => {
 	let squadNumberShow = document.createElement('div');
 	squadNumberShow.className = `squadNumber`;
 	App.insertAdjacentElement('beforeend', squadNumberShow);
-	for (let i = a; i <= b; i++) {
-		squadNumberShow.insertAdjacentHTML('beforeend', `<span>${i * i}, </span>`);
+
+	if (!isNaN(a) && !isNaN(b) && a <= b) {
+		for (let i = a; i <= b; i++) {
+			squadNumberShow.insertAdjacentHTML('beforeend', `<span>${i * i}, </span>`);
+		}
 	}
 };
 
@@ -36,8 +41,11 @@ const tableNumber = (num) => {
 	let table = document.createElement('div');
 	table.classList.add('table');
 	multiplicationTable.insertAdjacentElement('beforeend', table);
-	for (let i = 1; i <= 10; i++) {
-		table.insertAdjacentHTML('beforeend', `<div>${i} x ${num} = ${i * num}</div>`);
+
+	if (!isNaN(num && num > 0)) {
+		for (let i = 1; i <= 10; i++) {
+			table.insertAdjacentHTML('beforeend', `<div>${i} x ${num} = ${i * num}</div>`);
+		}
 	}
 };
 tableNumber(1);
@@ -56,9 +64,11 @@ const arithmeticAllNumber = (a, b) => {
 	let sum = 0;
 	let acc = 0;
 
-	for (let i = a; i <= b; i++) {
-		sum = sum + i;
-		acc++;
+	if (!isNaN(a) && !isNaN(b) && a <= b) {
+		for (let i = a; i <= b; i++) {
+			sum = sum + i;
+			acc++;
+		}
 	}
 
 	return sum / acc;
@@ -71,9 +81,13 @@ arithmeticAllNumber(1, 500);
 
 function calculateTotal(number) {
 	let sum = 0;
-	for (let i = 1; i <= number; i++) {
-		sum += i;
+
+	if (!isNaN(number) && number > 0) {
+		for (let i = 1; i <= number; i++) {
+			sum += i;
+		}
 	}
+
 	return sum;
 }
 console.log(calculateTotal(15));
@@ -82,10 +96,18 @@ console.log(calculateTotal(15));
 /* Вивести суму лише парних чисел в діапазоні від 30 до 80.	 */
 const sumAllDoubleNumber = (a, b) => {
 	let arr = [];
-	for (let i = 0; a < b; a++) {
-		a % 2 === 0 ? arr.push(a) : undefined;
+	let arrNumber = document.createElement('div');
+	arrNumber.className = `sumDoubleNumber`;
+	App.insertAdjacentElement('beforeend', numbersArray);
+
+	if (!isNaN(a) && !isNaN(b) && a <= b) {
+		for (let i = 0; a < b; a++) {
+			a % 2 === 0 ? arr.push(a) : undefined;
+		}
 	}
-	console.log(arr);
+
+	arrNumber.insertAdjacentElement('beforeend', arr);
+
 	return arr;
 };
 
