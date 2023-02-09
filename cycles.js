@@ -22,7 +22,7 @@ showNumber(10, 20);
 /*  */
 /* Вивести квадрати чисел від 10 до 20 */
 const squadNumber = (a, b) => {
-	let squadNumberShow = document.createElement('div');
+	const squadNumberShow = document.createElement('div');
 	squadNumberShow.className = `squadNumber`;
 	App.insertAdjacentElement('beforeend', squadNumberShow);
 
@@ -38,7 +38,7 @@ squadNumber(10, 20);
 /*  */
 /* Вивести таблицю множення на 7 */
 const tableNumber = (num) => {
-	let table = document.createElement('div');
+	const table = document.createElement('div');
 	table.classList.add('table');
 	multiplicationTable.insertAdjacentElement('beforeend', table);
 
@@ -90,23 +90,18 @@ function calculateTotal(number) {
 
 	return sum;
 }
-console.log(calculateTotal(15));
+calculateTotal(15);
 
 /*  */
 /* Вивести суму лише парних чисел в діапазоні від 30 до 80.	 */
 const sumAllDoubleNumber = (a, b) => {
 	let arr = [];
-	let arrNumber = document.createElement('div');
-	arrNumber.className = `sumDoubleNumber`;
-	App.insertAdjacentElement('beforeend', numbersArray);
 
 	if (!isNaN(a) && !isNaN(b) && a <= b) {
 		for (let i = 0; a < b; a++) {
 			a % 2 === 0 ? arr.push(a) : undefined;
 		}
 	}
-
-	arrNumber.insertAdjacentElement('beforeend', arr);
 
 	return arr;
 };
@@ -119,9 +114,48 @@ sumAllDoubleNumber(30, 80);
 const searchNumber = (a, b) => {
 	let arr = [];
 	for (let i = 0; a <= b; a++) {
-		a % 3 === 0 ? arr.push(a) : undefined;
+		if (a % 3 === 0) {
+			arr.push(a);
+		}
 	}
-
-	console.log(arr);
 };
 searchNumber(100, 200);
+
+const findDivisors = (number) => {
+	const dividers = [];
+	const evenNumber = [];
+	let sumEvenNumber = 0;
+
+	/* дільники числа */
+	if (!isNaN(number)) {
+		for (let i = 0; i <= number; i++) {
+			if (number % i === 0) {
+				dividers.push(i);
+			}
+		}
+	}
+
+	/* кількість парних дільників числа */
+	if (dividers.length) {
+		for (let y = 0; y <= dividers.length; y++) {
+			const elem = dividers[y];
+
+			if (elem % 2 === 0) {
+				evenNumber.push(elem);
+			}
+		}
+	}
+
+	/* сума парних дільників числа */
+	for (let h = 0; h <= evenNumber.length; h++) {
+		const elem = evenNumber[h];
+
+		if (!isNaN(elem)) {
+			sumEvenNumber = sumEvenNumber + elem;
+		}
+	}
+
+	return dividers, evenNumber, sumEvenNumber;
+};
+
+findDivisors(10);
