@@ -10,10 +10,8 @@
 */
 /* 1) */
 const rationalNumber = (a, b) => {
-	let num = a;
-	for (let i = 0; num < b; i++) {
-		num = num + 0.5;
-		console.log(num);
+	for (let i = a; i <= b; i += 0.5) {
+		console.log(i);
 	}
 };
 
@@ -22,13 +20,10 @@ rationalNumber(20, 30);
 /* 2) */
 const getExchangeRate = () => {
 	let currentExchangeRate = 27;
-	const step = 10;
 
-	for (let i = 10; i <= 100; i++) {
+	for (let i = 10; i <= 100; i += 10) {
 		let rateByStep = currentExchangeRate * i;
-		if (rateByStep % step === 0) {
-			console.log(`Exchange Rate: ${i}$ it's ${rateByStep}₴`);
-		}
+		console.log(`Exchange Rate: ${i}$ it's ${rateByStep}₴`);
 	}
 };
 
@@ -48,22 +43,31 @@ const squadNumber = (num) => {
 squadNumber(78);
 
 /* 4) */
-const primeNumber = (num) => {
-	console.log(num % 2 !== 0 ? num : `${num} it's not prime number`);
+const isPrimeNumber = (num) => {
+	for (let i = 2, s = Math.sqrt(num); i <= s; i++) {
+		if (num % i === 0) return false;
+	}
+	return num > 1;
 };
 
-primeNumber(3);
-primeNumber(12);
+console.log(isPrimeNumber(3));
+console.log(isPrimeNumber(9));
+console.log(isPrimeNumber(12));
 
 /* 5) */
-const degreeNumberThree = (num) => {
+const isThirdDegree = (num) => {
 	if (!isNaN(num)) {
+		let thirdDegree = false;
 		for (let i = 0; i < 30; i++) {
 			if (3 ** i === num) {
-				console.log(`${i} degree`);
+				thirdDegree = true;
 			}
 		}
+
+		return thirdDegree;
 	}
 };
 
-degreeNumberThree(523);
+console.log(isThirdDegree(9));
+console.log(isThirdDegree(13));
+console.log(isThirdDegree(81));
