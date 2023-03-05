@@ -1,0 +1,19 @@
+.multiplicationTable {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 130px;
+}
+
+body {
+  background: #3e3d3d;
+  color: #fff;
+  opacity: 0.6;
+}
