@@ -14,59 +14,33 @@
 const arr = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54, 76, -4, 12, -35, 4, 47];
 
 /* 1) */
-const getAmountPositivElement = (array) => {
-	let sum = 0;
-	const arrayPositivElement = array.filter((element) => {
-		if (element > 0) {
-			sum += element;
-			return element;
-		}
-	});
+const getCountAndSumPositives = (array) => {
+	const countPositives = array.filter((el) => el > 0);
+	const sumPositives = countPositives.reduce((a, b) => a + b);
 
-	return [arrayPositivElement.length, sum];
+	return [countPositives.length, sumPositives];
 };
 
-console.log(getAmountPositivElement(arr));
+console.log(getCountAndSumPositives(arr));
 
 /* 2) */
-const getMinElement = (array) => {
-	let minElement = 0;
-	let positionIntoArr = 0;
+const getMinWithIndex = (array) => {
+	const min = Math.min(...arr);
+	const minIndex = array.findIndex((el) => el === min);
 
-	if (array.length > 0) {
-		array.forEach((element, index) => {
-			if (element < minElement) {
-				minElement = element;
-				positionIntoArr = index + 1;
-			}
-			// element < minElement ? minElement = element : false
-		});
-		return [minElement, positionIntoArr];
-	}
+	return [min, minIndex];
 };
-
-console.log(getMinElement(arr));
 
 /* 3) */
 
-const getMaxElement = (array) => {
-	let maxElement = 0;
-	let positionIntoArr = 0;
+const getMaxWithIndex = (array) => {
+	const max = Math.max(...arr);
+	const maxIndex = array.findIndex((el) => el === max);
 
-	if (array.length > 0) {
-		array.forEach((element, index) => {
-			if (element > maxElement) {
-				maxElement = element;
-				positionIntoArr = index + 1;
-			}
-		});
-		return [maxElement, positionIntoArr];
-	}
-
-	return;
+	return [max, maxIndex];
 };
 
-console.log(getMaxElement(arr));
+console.log(getMaxWithIndex(arr));
 
 /* 4) */
 
@@ -94,11 +68,7 @@ console.log(getAllEvenPositivNumber(arr));
 
 /* 6) */
 const getAllOddPositivNumber = (array) => {
-	const oddNumberArr = array.filter((element) => {
-		if (element % 2 === 0 && element > 0) {
-			return element;
-		}
-	});
+	const oddNumberArr = array.filter((element) => element % 2 && element > 0);
 
 	return oddNumberArr.length;
 };
@@ -156,14 +126,12 @@ console.log(getMultiplicationNumbers(arr));
 /* 10) */
 
 const getMaxElementArray = (array) => {
-	const acc = 0;
-
 	const maxElement = Math.max(...array);
 
 	const changeElementArray = array.map((element) => {
 		if (element !== maxElement) {
 			return (element = 0);
-		} else if (element === maxElement) {
+		} else {
 			return element;
 		}
 	});
