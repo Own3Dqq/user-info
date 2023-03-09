@@ -204,10 +204,10 @@ const addInfoToArray = () => {
 	return mainArr;
 };
 
-const enterUserData = addInfoToArray();
+const showUserData = addInfoToArray();
 
-console.dir(enterUserData);
-alert(JSON.stringify(enterUserData));
+console.dir(showUserData);
+alert(JSON.stringify(showUserData));
 
 /* 4. Створити функцію, яка прибирає з рядка всі символи, які ми передали другим аргументом. 'func(" hello world", ['l', 'd'])' поверне нам "heo wor". Вихідний рядок та символи для видалення задає користувач. */
 
