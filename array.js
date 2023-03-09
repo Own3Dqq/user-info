@@ -145,14 +145,14 @@ console.log(getMaxElementArray(arr));
 
 /* 1. Дано масив з елементами різних типів. Створити функцію яка вираховує середнє арифметичне лише числових елементів даного масиву. */
 
-const arr = [{ value: 96 }, 4, 'split', 7, { vw: 'Jetta', number: 1841, region: 'СВ' }, '4', 'John'];
+const array = [{ value: 96 }, 4, 'split', 7, { vw: 'Jetta', number: 1841, region: 'СВ' }, '4', 'John'];
 
 function getAverageNumber(arr) {
 	if (!Array.isArray(arr)) {
-		return 'Error: Input parameter must be an array.';
+		throw new Erro('Error: Input parameter must be an array.');
 	}
 	const numbers = arr.filter((item) => typeof item === 'number');
-	const sum = numbers.reduce((acc, cur) => acc + cur, 0);
+	const sum = numbers.reduce((a, b) => a + b);
 	return sum / numbers.length;
 }
 
@@ -187,8 +187,8 @@ console.log(doMath(22, 2, '^'));
 /* 3. Написати функцію заповнення даними користувача двомірного масиву. Довжину основного масиву і внутрішніх масивів задає користувач. Значення всіх елементів всіх масивів задає користувач. */
 
 const addInfoToArray = () => {
-	const widthMainArray = prompt('Input width main array'); // 2
-	const widthSecondaryArray = prompt('Input width secondary array'); //2
+	const widthMainArray = +prompt('Enter the length the main array');
+	const widthSecondaryArray = +prompt('Enter the length the internal array in the main array');
 
 	const mainArr = [];
 
@@ -196,26 +196,27 @@ const addInfoToArray = () => {
 		mainArr.push(new Array());
 
 		for (let j = 0; j < widthSecondaryArray; j++) {
-			const inputValue = prompt('Input values arrays');
-			mainArr[i].push(new Array(inputValue));
+			const enterUserValue = prompt(`Enter the value in the main array #${i + 1}, internal array #${j + 1}`);
+			mainArr[i].push(new Array(enterUserValue));
 		}
 	}
 
 	return mainArr;
 };
 
-const InputValue = addInfoToArray();
+const enterUserData = addInfoToArray();
 
-console.dir(InputValue);
+console.dir(enterUserData);
+alert(`[${enterUserData}]`);
 
 /* 4. Створити функцію, яка прибирає з рядка всі символи, які ми передали другим аргументом. 'func(" hello world", ['l', 'd'])' поверне нам "heo wor". Вихідний рядок та символи для видалення задає користувач. */
 
-function removeChars(inputString, ...charsRemove) {
-	for (let i = 0; i < charsRemove.length; i++) {
-		const regex = new RegExp(charsRemove[i], 'g');
+function removeChars(inputString, charsRemoveArray) {
+	for (let i = 0; i < charsRemoveArray.length; i++) {
+		const regex = new RegExp(charsRemoveArray[i], 'g');
 		inputString = inputString.toLowerCase().replace(regex, '');
 	}
 	return inputString;
 }
 
-console.log(removeChars('HOLLYWOOD', 'a', 'h', 'd'));
+console.log(removeChars('HOLLYWOOD', ['a', 'h', 'd']));
