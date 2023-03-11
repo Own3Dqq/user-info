@@ -11,135 +11,135 @@
   10) Знайти найбільший серед елементів масиву, ост альні обнулити.
 */
 
-const arr = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54, 76, -4, 12, -35, 4, 47];
+// const arr = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54, 76, -4, 12, -35, 4, 47];
 
-/* 1) */
-const getCountAndSumPositives = (array) => {
-	const countPositives = array.filter((el) => el > 0);
-	const sumPositives = countPositives.reduce((a, b) => a + b);
+// /* 1) */
+// const getCountAndSumPositives = (array) => {
+// 	const countPositives = array.filter((el) => el > 0);
+// 	const sumPositives = countPositives.reduce((a, b) => a + b);
 
-	return [countPositives.length, sumPositives];
-};
+// 	return [countPositives.length, sumPositives];
+// };
 
-console.log(getCountAndSumPositives(arr));
+// console.log(getCountAndSumPositives(arr));
 
-/* 2) */
-const getMinWithIndex = (array) => {
-	const min = Math.min(...arr);
-	const minIndex = array.findIndex((el) => el === min);
+// /* 2) */
+// const getMinWithIndex = (array) => {
+// 	const min = Math.min(...arr);
+// 	const minIndex = array.findIndex((el) => el === min);
 
-	return [min, minIndex];
-};
+// 	return [min, minIndex];
+// };
 
-/* 3) */
+// /* 3) */
 
-const getMaxWithIndex = (array) => {
-	const max = Math.max(...arr);
-	const maxIndex = array.findIndex((el) => el === max);
+// const getMaxWithIndex = (array) => {
+// 	const max = Math.max(...arr);
+// 	const maxIndex = array.findIndex((el) => el === max);
 
-	return [max, maxIndex];
-};
+// 	return [max, maxIndex];
+// };
 
-console.log(getMaxWithIndex(arr));
+// console.log(getMaxWithIndex(arr));
 
-/* 4) */
+// /* 4) */
 
-const getQuantityNegativeNumber = (array) => {
-	const negativeNumberArr = array.filter((element) => element < 0);
+// const getQuantityNegativeNumber = (array) => {
+// 	const negativeNumberArr = array.filter((element) => element < 0);
 
-	return negativeNumberArr.length;
-};
+// 	return negativeNumberArr.length;
+// };
 
-console.log(getQuantityNegativeNumber(arr));
+// console.log(getQuantityNegativeNumber(arr));
 
-/* 5) */
+// /* 5) */
 
-const getAllEvenPositivNumber = (array) => {
-	const EvenNumberArr = array.filter((element) => {
-		if (element % 2 !== 0 && element > 0) {
-			return element;
-		}
-	});
+// const getAllEvenPositivNumber = (array) => {
+// 	const EvenNumberArr = array.filter((element) => {
+// 		if (element % 2 !== 0 && element > 0) {
+// 			return element;
+// 		}
+// 	});
 
-	return EvenNumberArr.length;
-};
+// 	return EvenNumberArr.length;
+// };
 
-console.log(getAllEvenPositivNumber(arr));
+// console.log(getAllEvenPositivNumber(arr));
 
-/* 6) */
-const getAllOddPositivNumber = (array) => {
-	const oddNumberArr = array.filter((element) => element % 2 && element > 0);
+// /* 6) */
+// const getAllOddPositivNumber = (array) => {
+// 	const oddNumberArr = array.filter((element) => element % 2 && element > 0);
 
-	return oddNumberArr.length;
-};
+// 	return oddNumberArr.length;
+// };
 
-console.log(getAllOddPositivNumber(arr));
+// console.log(getAllOddPositivNumber(arr));
 
-/* 7) */
+// /* 7) */
 
-const getSumPositivOddNumber = (array) => {
-	let sum = 0;
+// const getSumPositivOddNumber = (array) => {
+// 	let sum = 0;
 
-	for (let i = 0; i < array.length; i++) {
-		const element = array[i];
-		element > 0 && element % 2 === 0 ? (sum += element) : undefined;
-	}
+// 	for (let i = 0; i < array.length; i++) {
+// 		const element = array[i];
+// 		element > 0 && element % 2 === 0 ? (sum += element) : undefined;
+// 	}
 
-	return sum;
-};
+// 	return sum;
+// };
 
-console.log(getSumPositivOddNumber(arr));
+// console.log(getSumPositivOddNumber(arr));
 
-/* 8) */
+// /* 8) */
 
-const getSumPositivEvenNumber = (array) => {
-	let sum = 0;
+// const getSumPositivEvenNumber = (array) => {
+// 	let sum = 0;
 
-	for (let i = 0; i < array.length; i++) {
-		const element = array[i];
-		element > 0 && element % 2 !== 0 ? (sum += element) : undefined;
-	}
+// 	for (let i = 0; i < array.length; i++) {
+// 		const element = array[i];
+// 		element > 0 && element % 2 !== 0 ? (sum += element) : undefined;
+// 	}
 
-	return sum;
-};
+// 	return sum;
+// };
 
-console.log(getSumPositivEvenNumber(arr));
+// console.log(getSumPositivEvenNumber(arr));
 
-/* 9) */
+// /* 9) */
 
-const getMultiplicationNumbers = (array) => {
-	let sum = 1;
+// const getMultiplicationNumbers = (array) => {
+// 	let sum = 1;
 
-	const getPositivArray = array.filter((element) => element > 0);
-	console.log(getPositivArray);
+// 	const getPositivArray = array.filter((element) => element > 0);
+// 	console.log(getPositivArray);
 
-	for (let i = 0; i < getPositivArray.length; i++) {
-		sum = sum * getPositivArray[i];
-		console.log(sum);
-	}
+// 	for (let i = 0; i < getPositivArray.length; i++) {
+// 		sum = sum * getPositivArray[i];
+// 		console.log(sum);
+// 	}
 
-	return sum;
-};
+// 	return sum;
+// };
 
-console.log(getMultiplicationNumbers(arr));
+// console.log(getMultiplicationNumbers(arr));
 
-/* 10) */
+// /* 10) */
 
-const getMaxElementArray = (array) => {
-	const maxElement = Math.max(...array);
+// const getMaxElementArray = (array) => {
+// 	const maxElement = Math.max(...array);
 
-	const changeElementArray = array.map((element) => {
-		if (element !== maxElement) {
-			return (element = 0);
-		} else {
-			return element;
-		}
-	});
+// 	const changeElementArray = array.map((element) => {
+// 		if (element !== maxElement) {
+// 			return (element = 0);
+// 		} else {
+// 			return element;
+// 		}
+// 	});
 
-	return changeElementArray;
-};
+// 	return changeElementArray;
+// };
 
-console.log(getMaxElementArray(arr));
+// console.log(getMaxElementArray(arr));
 
 /*  */
 
@@ -149,7 +149,7 @@ const array = [{ value: 96 }, 4, 'split', 7, { vw: 'Jetta', number: 1841, region
 
 function getAverageNumber(arr) {
 	if (!Array.isArray(arr)) {
-		throw new Erro('Error: Input parameter must be an array.');
+		throw new Error('Error: Input parameter must be an array.');
 	}
 	const numbers = arr.filter((item) => typeof item === 'number');
 	const sum = numbers.reduce((a, b) => a + b);
@@ -160,9 +160,9 @@ console.log(getAverageNumber(arr));
 
 /* 2. Написати функцію doMath(x, znak, y), яка отримує 3 аргументи: числа x і y, рядок znak. У змінній znak може бути: +, -, *, /, %, ^ (ступінь ).Вивести результат математичної дії, вказаної в змінній znak.Обидва числа і знак виходять від користувача. */
 
-const doMath = (x, y, znak) => {
-	if ((typeof x === 'number', typeof y === 'number', typeof znak === 'string')) {
-		switch (znak) {
+const doMath = (x, y, sign) => {
+	if ((typeof x === 'number', typeof y === 'number', typeof sign === 'string')) {
+		switch (sign) {
 			case '+':
 				return x + y;
 			case '-':
@@ -177,7 +177,7 @@ const doMath = (x, y, znak) => {
 				return x ** y;
 
 			default:
-				console.log('Error: Parameter not found.');
+				throw TypeError('Error: Parameter not found.');
 		}
 	}
 };
@@ -186,28 +186,34 @@ console.log(doMath(22, 2, '^'));
 
 /* 3. Написати функцію заповнення даними користувача двомірного масиву. Довжину основного масиву і внутрішніх масивів задає користувач. Значення всіх елементів всіх масивів задає користувач. */
 
-const addInfoToArray = () => {
-	const widthMainArray = +prompt('Enter the length the main array');
-	const widthSecondaryArray = +prompt('Enter the length the internal array in the main array');
+const generate2dArray = () => {
+	const widthMainArray = +prompt('Enter the length of the main array');
+	const widthSecondaryArray = +prompt('Enter the length of the internal array in the main array');
 
-	const mainArr = [];
+	const madeMainArrays = (value) => {
+		const containerArray = [];
 
-	for (let i = 0; i < widthMainArray; i++) {
-		mainArr.push(new Array());
-
-		for (let j = 0; j < widthSecondaryArray; j++) {
-			const enterUserValue = prompt(`Enter the value in the main array #${i + 1}, internal array #${j + 1}`);
-			mainArr[i].push(new Array(enterUserValue));
+		for (let i = 0; i < value; i++) {
+			containerArray.push([]);
 		}
-	}
 
-	return mainArr;
+		return containerArray;
+	};
+
+	const mainArr = madeMainArrays(widthMainArray);
+
+	mainArr.map((item, index) => {
+		for (let i = 1; i <= widthSecondaryArray; i++) {
+			const userValue = prompt(`Enter the value in the main array #${index + 1}, internal array #${i}`);
+
+			item.push(new Array(userValue));
+		}
+	});
+
+	alert(JSON.stringify(mainArr));
 };
 
-const showUserData = addInfoToArray();
-
-console.dir(showUserData);
-alert(JSON.stringify(showUserData));
+generate2dArray();
 
 /* 4. Створити функцію, яка прибирає з рядка всі символи, які ми передали другим аргументом. 'func(" hello world", ['l', 'd'])' поверне нам "heo wor". Вихідний рядок та символи для видалення задає користувач. */
 
